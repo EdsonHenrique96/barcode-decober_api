@@ -21,6 +21,7 @@ init api
 ```sh
 ./scripts/development.sh
 ```
+The api will be available at: http://localhost:3000
 
 ---
 ## Scripts
