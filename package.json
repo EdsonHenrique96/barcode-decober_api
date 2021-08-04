@@ -7,7 +7,7 @@
     "start:dev": "nodemon",
     "build": "tsc",
     "start": "yarn build && node build/index.js",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

@@ -12,7 +12,7 @@ const {
 } = Calculator;
 
 export default class BarCodeManager {
-  private readonly BASE_DATE = new Date("10/07/1997");
+  public readonly BASE_DATE = new Date("10/07/1997");
 
   private digitableLine: string[];
 
@@ -111,16 +111,16 @@ export default class BarCodeManager {
    * eliminando-o do código de barras.
    */
   public getExpirationDate(): string {
+    if(this.expirationDateFactor <= 0) {
+      return '';
+    }
+    
     const expDate = this.date.addDays(this.BASE_DATE, this.expirationDateFactor);
 
     if(!Number.isInteger(this.expirationDateFactor)) {
       throw new Error('expirationDateFactor must be integer');
     }
-
-    if(this.expirationDateFactor <= 0) {
-      return '';
-    }
-
+    
     return expDate;
   }
 
