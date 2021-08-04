@@ -54,3 +54,8 @@ Contains the code base of tests
 
 ### scripts
 Automation and axillary scripts
+
+# WIP
+
+- Implement features to accept agreement slips, at the moment we only know how to deal with slips
+- Do not account for the maturity factor when the amount of the acorn is greater than R$ 99,999,999.99
