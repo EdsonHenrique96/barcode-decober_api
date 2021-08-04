@@ -30,7 +30,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
     console.error(
       JSON.stringify(
         {
-          status: 422,
+          status: 412,
           message: e.message,
           timestamp: new Date().getTime()
         }
@@ -38,7 +38,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
     );
 
     return res
-      .status(422)
+      .status(412)
       .json({error: e.message });
   }
 }
