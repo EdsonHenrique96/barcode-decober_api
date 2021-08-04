@@ -1,6 +1,7 @@
 import { DateManager } from '../../../src/infra/modules/DateManager';
 import BarcodeManager from '../../../src/services/BarCodeManager';
 
+// REFACTOR - Create data builder
 const validBarcode = "03399201595100029953080202101020184050000127236";
 
 const barCodeWith0Amount = "03399201595100029953080202101020184050000000000";
