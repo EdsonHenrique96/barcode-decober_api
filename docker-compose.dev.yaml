@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  barcode-api:
+    image: node:16-alpine3.11
+    environment:
+      - NODE_ENV=development
+    ports:
+      - 3000:3000
+    working_dir: /usr/barcode/
+    volumes: 
+      - ./:/usr/barcode/
+    command: ash -c "${CMD}"
