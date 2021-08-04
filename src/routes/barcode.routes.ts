@@ -2,10 +2,15 @@ import { Request, Response, Router } from 'express';
 import { DateManager } from '../infra/modules/DateManager';
 import BarCodeManager from '../services/BarCodeManager';
 
+import middlewareValidator from './middlewares/validation';
+
 const routes = Router();
 const dateManager = new DateManager();
 
-routes.get('/boleto/:digitableLine', (req: Request, res: Response) => {
+routes.get(
+  '/boleto/:digitableLine',
+  middlewareValidator, 
+  (req: Request, res: Response) => {
   const boleto = req.params.digitableLine.toString();
   const barCodeManager = new BarCodeManager(boleto, dateManager);
   
